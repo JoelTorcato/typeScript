@@ -4,23 +4,40 @@ x = 16;
 console.log(x);
 
 // Inferencia x Annotation
-let y = 15;
+let i = 15;
+let a: number = 15;
 
-// Tipos Básicos
+// Tipos básicos
 let firstName: string = "Joel";
 let age: number = 30;
 const inAdmin: boolean = true;
 
 // String != string
 console.log(typeof firstName);
-firstName = "Pedro";
+firstName = "Ana";
 console.log(firstName);
 
 // Object
-const myNumbers: number[] = [1, 2, 3];
+const myNumbers: number[] = [3, 2, 1];
 console.log(myNumbers);
 console.log(myNumbers.length);
-// console.log(myNumbers.toUpperCase())
+// console.log(myNumbers.toUpperCase());
 console.log(firstName.toUpperCase());
-myNumbers.push(7);
+myNumbers.push(100);
 console.log(myNumbers);
+
+// Tuplas -> Tuple
+let myTuple: [number, string, string[]];
+myTuple = [5, "teste", ["a", "b"]];
+
+// myTuple = [true, false, true]
+
+// Object literals -> {prop: value}
+const user: { name: string; age: number } = {
+  name: "Susana",
+  age: 51,
+};
+console.log(user);
+console.log(user.name);
+
+// user.job: "Programador"
