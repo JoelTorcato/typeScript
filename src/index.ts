@@ -8,13 +8,13 @@ let i = 15;
 let a: number = 15;
 
 // Tipos básicos
-let firstName: string = "Joel";
+let firstName: string = "Ana";
 let age: number = 30;
 const inAdmin: boolean = true;
 
 // String != string
 console.log(typeof firstName);
-firstName = "Ana";
+firstName = "Joel";
 console.log(firstName);
 
 // Object
@@ -41,3 +41,28 @@ console.log(user);
 console.log(user.name);
 
 // user.job: "Programador"
+
+// Any
+let w: any = 0;
+w = "teste";
+w = true;
+w = [];
+
+// Union type
+let unionType: string | number = 2024;
+unionType = "França";
+console.log(
+  (
+    unionType.toString() +
+    " Campeã e quem marcou o golo decisivo foi o " +
+    firstName +
+    " que tem " +
+    user.age +
+    " de idade."
+  ).toUpperCase() /* Para colocar toda a frase em letras maiúsculas usando o toUpperCase(), 
+  preciso de colocar 2 parênteses, e no final do segundo, na parte de baixo, coloco o método. */
+);
+
+/* O toString() sempre sempre será identificado como uma string, 
+independentemente de o valor ser um number ou um boolean. */
+console.log(typeof unionType.toString());
