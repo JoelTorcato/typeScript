@@ -33,14 +33,14 @@ myTuple = [5, "teste", ["a", "b"]];
 // myTuple = [true, false, true]
 
 // Object literals -> {prop: value}
-const user: { name: string; age: number } = {
+const Client: { name: string; age: number } = {
   name: "Susana",
   age: 51,
 };
-console.log(user);
-console.log(user.name);
+console.log(Client);
+console.log(Client.name);
 
-// user.job: "Programador"
+// Cliente.job: "Programador"
 
 // Any
 let w: any = 0;
@@ -57,7 +57,7 @@ console.log(
     " Campeã e quem marcou o golo decisivo foi o " +
     firstName +
     " que tem " +
-    user.age +
+    Client.age +
     " de idade."
   ).toUpperCase() /* Para colocar toda a frase em letras maiúsculas usando o toUpperCase(), 
   preciso de colocar 2 parênteses, e no final do segundo, na parte de baixo, coloco o método. */
@@ -69,10 +69,10 @@ console.log(typeof unionType.toString());
 
 // Type alias
 type myIdType = number | string;
-let userId: myIdType = "alô";
+let ClienteId: myIdType = "alô";
 let productId = 10; // Ver porquê que não dá erro
 
-console.log(typeof userId);
+console.log(typeof ClienteId);
 
 // Enum
 // Tamanho de roupas (size: Pequeno, Médio, Grande, Muito grande)
@@ -149,3 +149,82 @@ function greeting(greet: string, name?: string): void {
 }
 greeting("Senhor");
 greeting("Senhor", "Carlos");
+
+// Interfaces
+interface MathFunctionParams {
+  n1: number;
+  n2: number;
+}
+
+function sumNumbers(nums: MathFunctionParams) {
+  return nums.n1 + nums.n2;
+}
+
+function multiplyNumbers(nums: MathFunctionParams) {
+  return nums.n1 * nums.n2;
+}
+
+const Numbers: MathFunctionParams = {
+  n1: 7,
+  n2: 10,
+};
+
+console.log(sumNumbers(Numbers));
+console.log(multiplyNumbers(Numbers));
+
+// Narrowing
+// Checagem de tipos
+function doSomething(info: number | boolean): void {
+  if (typeof info === "number") {
+    console.log(`O número é ${info}`);
+    return;
+  } else
+    console.log(`Não foi passado um número, foi passado um ${typeof info}.`);
+}
+doSomething(true); // Ver o que foi dito.
+
+// Generics
+function showArrayItems<T>(array: T[]) {
+  array.forEach((item) => {
+    console.log;
+  });
+
+  const a1 = [1, 2, 3];
+  showArrayItems(a1);
+
+  // Classes
+}
+class Cliente {
+  name;
+  age;
+  role;
+  isApproved;
+
+  constructor(name: string, age: number, role: string, isApproved: boolean) {
+    this.name = name;
+    this.age = age;
+    this.role = role;
+    this.isApproved = isApproved;
+  }
+  showClienteName() {
+    console.log(`O nome do usuário é ${this.name}`);
+  }
+  showClienteRole(canShow: boolean) {
+    if (canShow) {
+      console.log(`A role do usuário é: ${this.role}`);
+      return;
+    }
+    console.log("Informação restrita");
+  }
+}
+
+const Joel = new Cliente("Joel", 15, "Admin", true);
+const Susana = new Cliente("Susana", 51, "Aluna", false);
+const Pedro = new Cliente("Pedro", 54, "CEO", true);
+
+console.log(Joel);
+
+Susana.showClienteName();
+Joel.showClienteRole(true);
+Susana.showClienteRole(false);
+Pedro.showClienteRole(true);
