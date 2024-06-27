@@ -170,7 +170,7 @@ class Cliente {
         console.log("Informação restrita");
     }
     showClienteAge(canShow) {
-        if (canShow === "Sim" || true) {
+        if (canShow === "Sim" || canShow === true) {
             console.log(`A idade é de ${this.age}`);
             return;
         }
@@ -186,4 +186,30 @@ Susana.showClienteName();
 Joel.showClienteRole(true);
 Susana.showClienteRole(false);
 Pedro.showClienteRole(true);
-Simão.showClienteAge(false);
+Simão.showClienteAge("Sim");
+class Car {
+    constructor(brand, wheels, commonColor, color) {
+        this.brand = brand;
+        this.wheels = wheels;
+        this.commonColor = commonColor;
+        this.color = color;
+    }
+    showBrand() {
+        console.log(`A marca do carro é: ${this.brand}`);
+    }
+    showColor(common) {
+        if (common === "Sim" || common === true) {
+            console.log(`a cor do carro é comum e ela é ${this.color}`);
+            return;
+        }
+        console.log(`a cor do carro não é comum!`);
+    }
+}
+const fusca = new Car("VW", 4, true, "white");
+const tesla = new Car("Tesla", 4, false, "orange");
+fusca.showBrand();
+tesla.showBrand();
+// Ver como fazer a resposta de cima ser igual á de baixo
+tesla.showColor(false);
+fusca.showColor("Sim");
+// Herança
