@@ -216,11 +216,19 @@ class Cliente {
     }
     console.log("Informação restrita");
   }
+  showClienteAge(canShow: any) {
+    if (canShow === "Sim" || true) {
+      console.log(`A idade é de ${this.age}`);
+      return;
+    }
+    console.log("A idade é inválida!");
+  }
 }
 
 const Joel = new Cliente("Joel", 15, "Admin", true);
 const Susana = new Cliente("Susana", 51, "Aluna", false);
 const Pedro = new Cliente("Pedro", 54, "CEO", true);
+const Simão = new Cliente("Simão", 18, "Admin", false);
 
 console.log(Joel);
 
@@ -228,3 +236,4 @@ Susana.showClienteName();
 Joel.showClienteRole(true);
 Susana.showClienteRole(false);
 Pedro.showClienteRole(true);
+Simão.showClienteAge(false);
