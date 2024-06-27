@@ -150,8 +150,8 @@ function showArrayItems(array) {
     });
     const a1 = [1, 2, 3];
     showArrayItems(a1);
-    // Classes
 }
+// Classes
 class Cliente {
     constructor(name, age, role, isApproved) {
         this.name = name;

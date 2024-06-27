@@ -191,9 +191,9 @@ function showArrayItems<T>(array: T[]) {
 
   const a1 = [1, 2, 3];
   showArrayItems(a1);
-
-  // Classes
 }
+
+// Classes
 class Cliente {
   name;
   age;
