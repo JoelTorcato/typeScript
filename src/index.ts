@@ -248,17 +248,20 @@ class Car implements IVehicle {
   wheels;
   commonColor;
   color;
+  doors;
 
   constructor(
     brand: string,
     wheels: number,
     commonColor: boolean,
-    color: string
+    color: string,
+    doors: number
   ) {
     this.brand = brand;
     this.wheels = wheels;
     this.commonColor = commonColor;
     this.color = color;
+    this.doors = doors;
   }
   showBrand(): void {
     console.log(`A marca do carro é: ${this.brand}`);
@@ -270,14 +273,28 @@ class Car implements IVehicle {
     }
     console.log(`a cor do carro não é comum!`);
   }
+  isACar(isACar: boolean): void {
+    if (isACar) {
+      console.log(`É um carro.`);
+      return;
+    }
+    console.log(`Não é um carro.`);
+  }
+  showDoors(): void {
+    console.log(`O carro tem ${this.doors} portas.`);
+  }
 }
-const fusca = new Car("VW", 4, true, "white");
-const tesla = new Car("Tesla", 4, false, "orange");
+const fusca = new Car("VW", 4, true, "white", 4);
+const tesla = new Car("Tesla", 4, false, "orange", 4);
+const mini = new Car("Mini", 4, true, "black", 2);
 
 fusca.showBrand();
 tesla.showBrand();
 // Ver como fazer a resposta de cima ser igual á de baixo
 tesla.showColor(false);
 fusca.showColor("Sim");
+fusca.isACar(false);
+tesla.showDoors();
+mini.showDoors();
 
 // Herança
