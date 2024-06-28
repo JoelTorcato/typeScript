@@ -1,4 +1,10 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 // Sting, Boolean, Number, ...
 let x = 10;
 x = 16;
@@ -228,3 +234,38 @@ fusca.isACar(false);
 tesla.showDoors();
 mini.showDoors();
 // Herança
+class SuperCar extends Car {
+    constructor(brand, wheels, commonColor, color, doors, engine) {
+        super(brand, wheels, commonColor, color, doors);
+        this.engine = engine;
+    }
+    showEngine() {
+        console.log(`O motor do carro é ${this.engine}`);
+        return;
+    }
+}
+const a4 = new SuperCar("Audi", 4, true, "white", 4, 2.0);
+console.log(a4);
+a4.showEngine();
+// Decorators
+function BaseParameters() {
+    return function (constructor) {
+        return class extends constructor {
+            constructor() {
+                super(...arguments);
+                this.id = Math.random();
+                this.createAt = new Date();
+            }
+        };
+    };
+}
+let Person = class Person {
+    constructor(name) {
+        this.name = name;
+    }
+};
+Person = __decorate([
+    BaseParameters()
+], Person);
+const joel = new Person("Joel");
+console.log(joel);

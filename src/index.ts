@@ -298,3 +298,47 @@ tesla.showDoors();
 mini.showDoors();
 
 // Herança
+class SuperCar extends Car {
+  engine;
+
+  constructor(
+    brand: string,
+    wheels: number,
+    commonColor: boolean,
+    color: string,
+    doors: number,
+    engine: number
+  ) {
+    super(brand, wheels, commonColor, color, doors);
+    this.engine = engine;
+  }
+  showEngine(): void {
+    console.log(`O motor do carro é ${this.engine}`);
+    return;
+  }
+}
+const a4 = new SuperCar("Audi", 4, true, "white", 4, 2.0);
+console.log(a4);
+a4.showEngine();
+
+// Decorators
+// Constructor decorator
+function BaseParameters() {
+  return function <T extends { new (...args: any[]): {} }>(constructor: T) {
+    return class extends constructor {
+      id = Math.random();
+      createAt = new Date();
+    };
+  };
+}
+@BaseParameters()
+class Person {
+  name;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+const joel = new Person("Joel");
+console.log(joel);
