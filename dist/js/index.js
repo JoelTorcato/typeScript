@@ -5,13 +5,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-// Sting, Boolean, Number, ...
-let x = 10;
-x = 16;
-console.log(x);
+// String, Boolean, Number, ...
+let x = 15; // let (Mutability)
+const y = "String";
+var h = true;
+console.log(x, y, h);
 // Inferencia x Annotation
-let i = 15;
+let i = false;
 let a = 15;
+console.log(a);
 // Tipos básicos
 let firstName = "Ana";
 let age = 30;
@@ -21,12 +23,12 @@ console.log(typeof firstName);
 firstName = "Joel";
 console.log(firstName);
 // Object
-const myNumbers = [3, 2, 1];
+const myNumbers = [1, 2, 3, 4];
 console.log(myNumbers);
 console.log(myNumbers.length);
-// console.log(myNumbers.toUpperCase());
 console.log(firstName.toUpperCase());
-myNumbers.push(100);
+myNumbers.push(100, 30);
+myNumbers.unshift(0, -1);
 console.log(myNumbers);
 // Tuplas -> Tuple
 let myTuple;
@@ -248,6 +250,7 @@ const a4 = new SuperCar("Audi", 4, true, "white", 4, 2.0);
 console.log(a4);
 a4.showEngine();
 // Decorators
+// Constructor decorator
 function BaseParameters() {
     return function (constructor) {
         return class extends constructor {
@@ -269,3 +272,5 @@ Person = __decorate([
 ], Person);
 const joel = new Person("Joel");
 console.log(joel);
+const test = "Second test";
+console.log(test);
