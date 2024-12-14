@@ -57,7 +57,7 @@ w = [];
 
 // Union type
 let unionType: string | number = 2024;
-unionType = "Portugal";
+unionType = "Carro";
 console.log(
   (
     unionType.toString() +
@@ -89,19 +89,20 @@ enum Size {
   M = "Médio",
   G = "Grande",
   MG = "Muito Grande",
+  EG = "Extra Grande",
 }
 
-const camisa = {
-  name: "Camisa branca",
-  size: Size.MG,
+const camisola = {
+  name: "Camisola branca",
+  size: Size.EG,
 };
-console.log(camisa.name.toUpperCase());
+console.log(typeof camisola.size);
 
 const chapeu = {
-  name: "Chapeu do Benfica",
+  name: "Chapeu do Portugal",
   size: Size.P,
 };
-chapeu.name = "Chapeu do Sporting";
+chapeu.name = "Chapeu do Benfica";
 
 console.log(
   "O " +
@@ -113,9 +114,9 @@ console.log(
     " cujo o nome é " +
     chapeu.name.toUpperCase() +
     ", também comprou uma " +
-    camisa.name +
+    camisola.name +
     " com o tamanho de " +
-    camisa.size +
+    camisola.size +
     ", só que temos um problema, ele não vive em portugal, ele vive na " +
     unionType
 );
@@ -124,39 +125,38 @@ console.log(
 let teste: "positiva" | null;
 // teste = "outrovalor"
 teste = "positiva";
-teste = null;
-console.log(teste);
+console.log(teste.toUpperCase());
 
 // Funções
 function sum(a: number, b: number) {
-  return a / b;
+  return a * b;
 }
 
-console.log(sum(2, 1));
+console.log(sum(3, 1));
 // console.log(sum("alô", true))
 
 function sayHelloTo(name: string): string {
   // Ver como se retorna um number.
   return `Hello ${name}`;
 }
-console.log(sayHelloTo("Susana"));
+console.log(sayHelloTo("Pedro"));
 
-function logger(msg: string): void {
+function logger(msg: number): void {
   console.log(msg);
 }
-logger("Teste!");
+logger(123);
 
 function greeting(greet: string, name?: string): void {
   /* O ponto de ? (interrugação), fala que é opcional;
   os valores opcionais ficam sempre no final. */
   if (name) {
-    console.log(`Alô ${greet} ${name}`);
+    console.log(`Alô, ${greet} ${name}`);
     return;
+  } else {
+    console.log(`Alô, ${greet}`);
   }
-  console.log(`Alô ${greet}`);
 }
-greeting("Senhor");
-greeting("Senhor", "Carlos");
+greeting("Senhora");
 
 // Interfaces
 interface MathFunctionParams {

@@ -53,7 +53,7 @@ w = true;
 w = [];
 // Union type
 let unionType = 2024;
-unionType = "Portugal";
+unionType = "Carro";
 console.log((unionType.toString() +
     " Campeã e quem marcou o golo decisivo foi o " +
     firstName.toUpperCase() +
@@ -76,17 +76,18 @@ var Size;
     Size["M"] = "M\u00E9dio";
     Size["G"] = "Grande";
     Size["MG"] = "Muito Grande";
+    Size["EG"] = "Extra Grande";
 })(Size || (Size = {}));
-const camisa = {
-    name: "Camisa branca",
-    size: Size.MG,
+const camisola = {
+    name: "Camisola branca",
+    size: Size.EG,
 };
-console.log(camisa.name.toUpperCase());
+console.log(typeof camisola.size);
 const chapeu = {
-    name: "Chapeu do Benfica",
+    name: "Chapeu do Portugal",
     size: Size.P,
 };
-chapeu.name = "Chapeu do Sporting";
+chapeu.name = "Chapeu do Benfica";
 console.log("O " +
     firstName +
     " tem " +
@@ -96,43 +97,43 @@ console.log("O " +
     " cujo o nome é " +
     chapeu.name.toUpperCase() +
     ", também comprou uma " +
-    camisa.name +
+    camisola.name +
     " com o tamanho de " +
-    camisa.size +
+    camisola.size +
     ", só que temos um problema, ele não vive em portugal, ele vive na " +
     unionType);
 // Literal types
 let teste;
 // teste = "outrovalor"
 teste = "positiva";
-teste = null;
-console.log(teste);
+console.log(teste.toUpperCase());
 // Funções
 function sum(a, b) {
-    return a / b;
+    return a * b;
 }
-console.log(sum(2, 1));
+console.log(sum(3, 1));
 // console.log(sum("alô", true))
 function sayHelloTo(name) {
     // Ver como se retorna um number.
     return `Hello ${name}`;
 }
-console.log(sayHelloTo("Susana"));
+console.log(sayHelloTo("Pedro"));
 function logger(msg) {
     console.log(msg);
 }
-logger("Teste!");
+logger(123);
 function greeting(greet, name) {
     /* O ponto de ? (interrugação), fala que é opcional;
     os valores opcionais ficam sempre no final. */
     if (name) {
-        console.log(`Alô ${greet} ${name}`);
+        console.log(`Alô, ${greet} ${name}`);
         return;
     }
-    console.log(`Alô ${greet}`);
+    else {
+        console.log(`Alô, ${greet}`);
+    }
 }
-greeting("Senhor");
-greeting("Senhor", "Carlos");
+greeting("Senhora");
 function sumNumbers(nums) {
     return nums.n1 + nums.n2;
 }
