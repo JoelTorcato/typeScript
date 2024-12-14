@@ -11,7 +11,7 @@ let a: number = 15;
 console.log(a);
 
 // Tipos básicos
-let firstName: string = "Ana";
+let firstName: string = "Joel";
 let age: number = 30;
 const inAdmin: boolean = true;
 
@@ -32,16 +32,20 @@ console.log(myNumbers);
 // Tuplas -> Tuple
 let myTuple: [number, string, string[]];
 myTuple = [5, "teste", ["a", "b"]];
+let yourTuple: [string, string, number];
+yourTuple = ["Joel", "Fernandes", 16];
+console.log(yourTuple);
 
 // myTuple = [true, false, true]
 
 // Object literals -> {prop: value}
-const Client: { name: string; age: number } = {
+const Client: { name: string; age: number, pay: boolean} = {
   name: "Susana",
-  age: 51,
+  age: 5819,
+  pay: true
 };
 console.log(Client);
-console.log(Client.name);
+console.log(Client.age);
 
 // Cliente.job: "Programador"
 
@@ -53,16 +57,16 @@ w = [];
 
 // Union type
 let unionType: string | number = 2024;
-unionType = "França";
+unionType = "Portugal";
 console.log(
   (
     unionType.toString() +
     " Campeã e quem marcou o golo decisivo foi o " +
-    firstName +
+    firstName.toUpperCase() +
     " que tem " +
     Client.age +
     " de idade."
-  ).toUpperCase() /* Para colocar toda a frase em letras maiúsculas usando o toUpperCase(), 
+  ) /* Para colocar toda a frase em letras maiúsculas usando o toUpperCase(), 
   preciso de colocar 2 parênteses, e no final do segundo, na parte de baixo, coloco o método. */
 );
 
@@ -71,9 +75,10 @@ independentemente de o valor ser um number ou um boolean. */
 console.log(typeof unionType.toString());
 
 // Type alias
-type myIdType = number | string;
+type myIdType =  string | boolean;
 let ClienteId: myIdType = "alô";
-let productId = 10; // Ver porquê que não dá erro
+ClienteId = true;
+// let productId: myIdType = 10;
 
 console.log(typeof ClienteId);
 

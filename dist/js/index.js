@@ -15,7 +15,7 @@ let i = false;
 let a = 15;
 console.log(a);
 // Tipos básicos
-let firstName = "Ana";
+let firstName = "Joel";
 let age = 30;
 const inAdmin = true;
 // String != string
@@ -33,14 +33,18 @@ console.log(myNumbers);
 // Tuplas -> Tuple
 let myTuple;
 myTuple = [5, "teste", ["a", "b"]];
+let yourTuple;
+yourTuple = ["Joel", "Fernandes", 16];
+console.log(yourTuple);
 // myTuple = [true, false, true]
 // Object literals -> {prop: value}
 const Client = {
     name: "Susana",
-    age: 51,
+    age: 5819,
+    pay: true
 };
 console.log(Client);
-console.log(Client.name);
+console.log(Client.age);
 // Cliente.job: "Programador"
 // Any
 let w = 0;
@@ -49,19 +53,20 @@ w = true;
 w = [];
 // Union type
 let unionType = 2024;
-unionType = "França";
+unionType = "Portugal";
 console.log((unionType.toString() +
     " Campeã e quem marcou o golo decisivo foi o " +
-    firstName +
+    firstName.toUpperCase() +
     " que tem " +
     Client.age +
-    " de idade.").toUpperCase() /* Para colocar toda a frase em letras maiúsculas usando o toUpperCase(),
+    " de idade.") /* Para colocar toda a frase em letras maiúsculas usando o toUpperCase(),
 preciso de colocar 2 parênteses, e no final do segundo, na parte de baixo, coloco o método. */);
 /* O toString() sempre sempre será identificado como uma string,
 independentemente de o valor ser um number ou um boolean. */
 console.log(typeof unionType.toString());
 let ClienteId = "alô";
-let productId = 10; // Ver porquê que não dá erro
+ClienteId = true;
+// let productId: myIdType = 10;
 console.log(typeof ClienteId);
 // Enum
 // Tamanho de roupas (size: Pequeno, Médio, Grande, Muito grande)
