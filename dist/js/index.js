@@ -140,12 +140,26 @@ function sumNumbers(nums) {
 function multiplyNumbers(nums) {
     return nums.n1 * nums.n2;
 }
+function divideNumbers(nums) {
+    return nums.n1 / nums.n2;
+}
 const Numbers = {
-    n1: 7,
-    n2: 10,
+    n1: 10,
+    n2: 2,
+    // n3: 10 Error because it is not a number
 };
 console.log(sumNumbers(Numbers));
 console.log(multiplyNumbers(Numbers));
+console.log(divideNumbers(Numbers));
+function personNames(person) {
+    return person.n1;
+}
+const People = {
+    n1: "Joel",
+    n2: "João",
+    n3: "Pedro"
+};
+console.log(personNames(People));
 // Narrowing
 // Checagem de tipos
 function doSomething(info) {

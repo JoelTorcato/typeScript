@@ -162,23 +162,49 @@ greeting("Senhora");
 interface MathFunctionParams {
   n1: number;
   n2: number;
+  // n3: string; Error
 }
 
-function sumNumbers(nums: MathFunctionParams) {
-  return nums.n1 + nums.n2;
+function sumNumbers(nums: MathFunctionParams) { // It was 'typed' by the interface
+  return nums.n1 + nums.n2
 }
 
 function multiplyNumbers(nums: MathFunctionParams) {
   return nums.n1 * nums.n2;
 }
 
+function divideNumbers(nums: MathFunctionParams) {
+  return nums.n1 / nums.n2;
+}
+
 const Numbers: MathFunctionParams = {
-  n1: 7,
-  n2: 10,
+  n1: 10,
+  n2: 2,
+  // n3: 10 Error because it is not a number
 };
 
 console.log(sumNumbers(Numbers));
 console.log(multiplyNumbers(Numbers));
+console.log(divideNumbers(Numbers));
+
+interface Names {
+  n1: string,
+  n2: string,
+  n3: string,
+}
+
+function personNames(person: Names) {
+  return person.n1
+}
+
+const People: Names = {
+  n1: "Joel",
+  n2: "João",
+  n3: "Pedro"
+}
+
+console.log(personNames(People));
+
 
 // Narrowing
 // Checagem de tipos
