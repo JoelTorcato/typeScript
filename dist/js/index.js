@@ -11,8 +11,8 @@ const y = "String";
 var h = true;
 console.log(x, y, h);
 // Inferencia x Annotation
-let i = false;
-let a = 15;
+let i = false; // Inferencia
+let a = 15; // Annotation
 console.log(a);
 // Tipos básicos
 let firstName = "Joel";
@@ -30,12 +30,14 @@ console.log(firstName.toUpperCase());
 myNumbers.push(100, 30);
 myNumbers.unshift(0, -1);
 console.log(myNumbers);
+// Review objects better 
 // Tuplas -> Tuple
-let myTuple;
+let myTuple; // string[] = Array
 myTuple = [5, "teste", ["a", "b"]];
 let yourTuple;
 yourTuple = ["Joel", "Fernandes", 16];
-console.log(yourTuple);
+console.log(yourTuple[1]);
+// string != string[]
 // myTuple = [true, false, true]
 // Object literals -> {prop: value}
 const Client = {

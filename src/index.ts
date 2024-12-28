@@ -5,8 +5,8 @@ var h: boolean = true;
 console.log(x, y, h);
 
 // Inferencia x Annotation
-let i = false;
-let a: number = 15;
+let i = false; // Inferencia
+let a: number = 15; // Annotation
 
 console.log(a);
 
@@ -29,12 +29,16 @@ myNumbers.push(100, 30);
 myNumbers.unshift(0, -1);
 console.log(myNumbers);
 
+// Review objects better 
+
 // Tuplas -> Tuple
-let myTuple: [number, string, string[]];
+let myTuple: [number, string, string[]]; // string[] = Array
 myTuple = [5, "teste", ["a", "b"]];
-let yourTuple: [string, string, number];
+let yourTuple: [string, string, number]; 
 yourTuple = ["Joel", "Fernandes", 16];
-console.log(yourTuple);
+console.log(yourTuple[1]);
+
+// string != string[]
 
 // myTuple = [true, false, true]
 
